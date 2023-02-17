@@ -1,9 +1,11 @@
 <template>
-  <div class="event-card">
-    <h1>{{ msg }}</h1>
-    <h4>@ {{ event.date }} {{ event.time }}</h4>
-    <h3>{{ event.title }}</h3>
-  </div>
+  <router-link :to="{ name: 'EventDetails' }">
+    <div class="event-card">
+      <h1>{{ msg }}</h1>
+      <h4>@ {{ event.date }} {{ event.time }}</h4>
+      <h3>{{ event.title }}</h3>
+    </div></router-link
+  >
 </template>
 
 <script>

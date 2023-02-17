@@ -5,18 +5,27 @@
 </template>
 
 <script>
-import EventService from "@/services/EventService.js"
+import { getEventById } from "../services/EventService.js";
+// import EventService from "@/services/EventService.js";
 export default {
-    data () {
-        return {
-            event: null,
-        }
-    }
+  data() {
+    return {
+      event: null,
+      id: 5928101,
+    };
+  },
+  created() {
+    // console.log(EventService);
+    getEventById(this.id)
+      .then((response) => {
+        console.log("One Event", response);
+        this.event = response;
+      })
+      .catch((error) => {
+        console.log("Error occured:", error);
+      });
+  },
 };
-
-created () {
-    EventService.ApiClient.get("/events/")
-}
 </script>
 
 <style></style>
