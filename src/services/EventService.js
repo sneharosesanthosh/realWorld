@@ -11,12 +11,12 @@ const ApiClient = axios.create({
   },
 });
 
-export const getEvents = () => {
-  return ApiClient.get("/events");
-};
+export default {
+  getEvents() {
+    return ApiClient.get("/events");
+  },
 
-export const getEventById = (id) => {
-  let oneEvent = ApiClient.get("/events/" + id).then(() => {
-    console.log("Evnt:", oneEvent);
-  });
+  getEvent(id) {
+    return ApiClient.get("/events/" + id);
+  },
 };

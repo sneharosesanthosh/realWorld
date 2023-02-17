@@ -1,12 +1,16 @@
 <template>
-  <h1>{{ event.title }}</h1>
-  <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
-  <p>{{ event.description }}</p>
+  <div v-if="event">
+    <h1>{{ event.title }}</h1>
+    <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
+    <p>{{ event.description }}</p>
+  </div>
+  <div v-else>Loading....</div>
 </template>
 
 <script>
-import { getEventById } from "../services/EventService.js";
+// import { getEvent } from "../services/EventService.js";
 // import EventService from "@/services/EventService.js";
+import EventService from "@/services/EventService.js";
 export default {
   data() {
     return {
@@ -16,10 +20,10 @@ export default {
   },
   created() {
     // console.log(EventService);
-    getEventById(this.id)
+    EventService.getEvent(this.id)
       .then((response) => {
-        console.log("One Event", response);
-        this.event = response;
+        console.log("One Event", response.data);
+        this.event = response.data;
       })
       .catch((error) => {
         console.log("Error occured:", error);
