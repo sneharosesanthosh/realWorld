@@ -3,12 +3,14 @@
   <div class="events">
     <h1>Events for Good</h1>
     <!-- how to pass this h1 dynamically as a prop -->
-    <EventCard
-      v-for="event in events"
-      :key="event.id"
-      msg="Event"
-      :event="event"
-    ></EventCard>
+    <router-link to="{name: eventDetails}">
+      <EventCard
+        v-for="event in events"
+        :key="event.id"
+        msg="Event"
+        :event="event"
+      ></EventCard
+    ></router-link>
   </div>
 </template>
 
