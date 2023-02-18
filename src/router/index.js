@@ -19,7 +19,7 @@ const routes = [
   },
 
   {
-    path: "/event-details/5928101",
+    path: "/event-details/:id",
     name: "EventDetails",
     component: EventDetails,
   },

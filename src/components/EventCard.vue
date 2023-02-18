@@ -1,5 +1,8 @@
 <template>
-  <router-link :to="{ name: 'EventDetails' }">
+  <router-link
+    class="event-card-router"
+    :to="{ name: 'EventDetails', params: { id: event.id } }"
+  >
     <div class="event-card">
       <h1>{{ msg }}</h1>
       <h4>@ {{ event.date }} {{ event.time }}</h4>
@@ -45,5 +48,9 @@ a {
   margin: 20px auto;
   padding: 15px;
   border-radius: 9px;
+}
+.event-card-router {
+  text-decoration: none;
+  color: rgb(156, 95, 95);
 }
 </style>

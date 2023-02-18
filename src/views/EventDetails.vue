@@ -15,12 +15,12 @@ export default {
   data() {
     return {
       event: null,
-      id: 5928101,
     };
   },
+
   created() {
     // console.log(EventService);
-    EventService.getEvent(this.id)
+    EventService.getEvent(this.$route.params.id)
       .then((response) => {
         console.log("One Event", response.data);
         this.event = response.data;
