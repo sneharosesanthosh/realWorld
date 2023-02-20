@@ -17,10 +17,11 @@ export default {
       event: null,
     };
   },
+  props: ["id"],
 
   created() {
     // console.log(EventService);
-    EventService.getEvent(this.$route.params.id)
+    EventService.getEvent(this.id)
       .then((response) => {
         console.log("One Event", response.data);
         this.event = response.data;
