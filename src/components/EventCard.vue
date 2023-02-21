@@ -7,8 +7,8 @@
       <h1>{{ msg }}</h1>
       <h4>@ {{ event.date }} {{ event.time }}</h4>
       <h3>{{ event.title }}</h3>
-    </div></router-link
-  >
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -48,9 +48,5 @@ a {
   margin: 20px auto;
   padding: 15px;
   border-radius: 9px;
-}
-.event-card-router {
-  text-decoration: none;
-  color: rgb(156, 95, 95);
 }
 </style>
