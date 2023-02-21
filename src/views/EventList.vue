@@ -16,7 +16,7 @@
 <script>
 // @ is an alias to /src
 import EventCard from "@/components/EventCard.vue";
-import { getEvents } from "@/services/EventService.js";
+import EventService from "@/services/EventService.js";
 
 export default {
   name: "EventList",
@@ -28,8 +28,9 @@ export default {
       events: null,
     };
   },
+
   created() {
-    getEvents()
+    EventService.getEvents()
       .then((response) => {
         console.log("Response:", response);
         this.events = response.data;
@@ -40,3 +41,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.event-card-router {
+  text-decoration: none;
+  color: rgb(156, 95, 95);
+}
+</style>
