@@ -41,3 +41,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.event-card-router {
+  text-decoration: none;
+  color: rgb(156, 95, 95);
+}
+</style>
